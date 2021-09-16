@@ -10,11 +10,11 @@ class ItemTest(TestCase):
         self.assertEqual('Test', i.name,
                          'The item name after creation do not represent constructor argument.')
         self.assertEqual(19.56, i.price,
-                         'The item name after creation do not represent constructor argument.')
+                         'The item price after creation do not represent constructor argument.')
 
     def test_item_json(self):
         i = ItemModel('Test', 19.56)
         expected = {'name': 'Test', 'price': 19.56}
 
         self.assertEqual(expected, i.json(),
-                         'The item name after creation do not represent constructor argument.')
+                         'The json after creation do not represent constructor argument.')
