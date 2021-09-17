@@ -9,7 +9,6 @@ class Item(Resource):
                         required=True,
                         help="This field cannot be left blank!")
 
-    @jwt_required()
     def get(self, name):
         item = ItemModel.find_by_name(name)
         if item:
