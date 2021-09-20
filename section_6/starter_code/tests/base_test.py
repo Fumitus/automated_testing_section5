@@ -7,14 +7,14 @@ and makes sure that it is a new, blank database each time.
 """
 
 from unittest import TestCase
-from app import app
-from db import db
+from section_6.starter_code.app import app
+from section_6.starter_code.db import db
 
 
 class BaseTest(TestCase):
     def setUp(self):
         # Make sure database exists
-        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:12345@localhost:5432/test'
         with app.app_context():
             db.init_app(app)
             db.create_all()
