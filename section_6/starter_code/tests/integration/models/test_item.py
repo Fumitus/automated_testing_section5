@@ -1,6 +1,6 @@
 from section_6.starter_code.models.item import ItemModel
 from section_6.starter_code.models.store import StoreModel
-from section_6.starter_code.tests.base_test import BaseTest
+from section_6.starter_code.tests.integration.integration_base_test import BaseTest
 
 
 class ItemTest(BaseTest):
@@ -19,3 +19,13 @@ class ItemTest(BaseTest):
             item.delete_from_db()
 
             self.assertIsNone(ItemModel.find_by_name('test'))
+
+    def test_store_relationship(self):
+        with self.app_context():
+            store = StoreModel('test_store')
+            item = ItemModel('test', 19.99, 1)
+
+            store.save_to_db()
+            item.save_to_db()
+
+            self.assertEqual(item.store.name, 'test_store')
