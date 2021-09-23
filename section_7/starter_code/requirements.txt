@@ -1,0 +1,7 @@
+Flask
+Flask-RESTful
+Flask-JWT
+Flask-SQLAlchemy
+uwsgi
+# need to clarify which dependencies are missing in order to install psycopg2
+psycopg2-binary
