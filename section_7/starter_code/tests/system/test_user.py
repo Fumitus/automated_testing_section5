@@ -38,3 +38,4 @@ class UserTest(BaseTest):
                 self.assertDictEqual({'message': 'A user already exists'},
                                  json.loads(response.data),
                                  "Request response message do not correspond to expected response message.")
+
