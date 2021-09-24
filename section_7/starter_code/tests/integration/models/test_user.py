@@ -1,4 +1,4 @@
-from section_7.starter_code.tests.integration.integration_base_test import BaseTest
+from section_7.starter_code.tests.base_test import BaseTest
 from section_7.starter_code.models.user import UserModel
 
 
