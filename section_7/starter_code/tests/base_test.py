@@ -12,14 +12,18 @@ from section_7.starter_code.db import db
 
 
 class BaseTest(TestCase):
-    def setUp(self):
+    @classmethod
+    def setUpClass(cls) -> None:
         # Make sure database exists
         app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:12345@localhost:5432/test'
         with app.app_context():
             db.init_app(app)
+
+    def setUp(self):
+        with app.app_context():
             db.create_all()
         # Get a test client
-        self.app = app.test_client()
+        self.app = app.test_client
         self.app_context = app.app_context
 
     def tearDown(self):
