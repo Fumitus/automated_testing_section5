@@ -1,10 +1,8 @@
-import section_7.starter_code.models.store
 from section_7.starter_code.models.store import StoreModel
 from section_7.starter_code.tests.base_test import BaseTest
 import json
 from section_7.starter_code.models.item import ItemModel
 from unittest.mock import patch
-from section_7.starter_code import app
 
 
 class StoreTest(BaseTest):
